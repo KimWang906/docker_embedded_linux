@@ -10,7 +10,7 @@ RUN apt-get update && apt-get -y install curl wget git u-boot-tools ncurses-dev 
 RUN apt-get -y install libusb-1.0-0-dev libbz2-dev libzstd-dev pkg-config cmake libssl-dev g++
 RUN mkdir /mywork
 WORKDIR /mywork
-RUN git clone https://github.com/nxp-imx/mfgtools.git && cd /mywork/mfgtools/ && cmake . && make
+RUN git clone https://github.com/nxp-imx/mfgtools.git && cd /mywork/mfgtools/ && cmake . && make && make install
 COPY files /mywork/
 
 RUN mkdir compiler App utils linux tmp
